@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #45A1F6;
+    font-family: "Raleway", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+  .map-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
+  .map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  .typewritter {
+    display: inline-block;
+  }
+  
+  .lekha {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 2s steps(23),
+        cursor .4s step-end infinite alternate;
+  }
+  
+  @keyframes cursor {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+  
+  
+  .to-top {
+    background:  white;
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #1f1f1f;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s;
+  }
+  
+  .to-top.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+  }
