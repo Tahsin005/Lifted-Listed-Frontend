@@ -8,9 +8,7 @@ window.addEventListener("scroll", () => {
     }
 }) 
 
-const toggler = document.getElementById("toggler");
-const sidebar = document.getElementById("sidebar");
-
-toggler.addEventListener("click", () => {
-  sidebar.classList.toggle("hidden");
-});
+const getValue = (id) => {
+    const value = document.getElementById(id).value;
+    return value;
+};
