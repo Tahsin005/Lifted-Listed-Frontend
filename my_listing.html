@@ -1,138 +1,118 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="./styles/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Listing</title>
+  <link rel="stylesheet" href="./styles/styles.css">
 
-    <!-- icon -->
-    <link class="rounded-lg" rel="icon" href="./assets/images/LandL.png">
+  <!-- icon -->
+  <link class="rounded-lg" rel="icon" href="./assets/images/LandL.png">
 
-    <!-- tailwind & daisyUI -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://kit.fontawesome.com/ca14cbc3b8.js" crossorigin="anonymous"></script>
+  <!-- tailwind & daisyUI -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.7.0/dist/full.css" rel="stylesheet">
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.7.0/dist/full.css" rel="stylesheet">
+
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-    <!-- This is header section -->
-    <div class="drawer max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24 pt-12 flex">
-        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content flex flex-row">
-          <!-- Navbar -->
-          <div class="flex">
-    
-            <div class="w-full navbar">
-              <div class="flex-none">
-                <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    class="inline-block w-6 h-6 stroke-current">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                  </svg>
-                </label>
-              </div>
-              
-            </div>
-          </div>
-          <!-- Page content here -->
-          
-          
-        </div>
-        <a href="index.html" class="flex justify-center">
-          <div class="flex text-end px-2 mx-2 text-2xl font-extrabold justify-end my-auto">Lifted & Listed</div>
-        </a>
-    
-        <div class="drawer-side z-20">
-          <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
-          <ul class="menu p-4 w-48 md:w-80 min-h-full bg-base-200">
-            <!-- Sidebar content here -->
-          <li><a href="index.html" class="font-bold text-sm md:text-xl">Home</a></li>
-          <li><a href="aboutus.html" class="font-bold text-sm md:text-xl">About Us</a></li>
-          <li><a href="features.html" class="font-bold text-sm md:text-xl">Features</a></li>
-          <li><a href="products.html" class="font-bold text-sm md:text-xl">Products</a></li>
-          <li><a href="add_product.html" class="font-bold text-sm md:text-xl">Add Product</a></li>
-          <li><a href="contact.html" class="font-bold text-sm md:text-xl">Contact</a></li>
-          <li><a href="dashboard.html" class="font-bold text-sm md:text-xl">Dashboard</a></li>
-          </ul>
-        </div>
+  <div class="lg:grid grid-cols-12">
+    <!-- responsive navbar -->
+    <div class="lg:hidden">
+      <nav>
+        <button class="p-4" id="toggler">
+          <img height="20px" width="20px" src="./assets/images/menu.png" alt="menu button" />
+        </button>
+      </nav>
+    </div>
+    <!-- sidebar -->
+    <div
+      id="sidebar"
+      class="col-span-2  lg:min-h-screen hidden lg:block"
+    >
+      <div class="px-6 py-12">
+        <ul class="menu p-4 w-48 md:w-80 md:min-h-full">
+          <!-- Sidebar content here -->
+          <li><a href="index.html" class="font-bold text-lg md:text-xl">Home</a></li>
+          <li><a href="products.html" class="font-bold text-lg md:text-xl">Products</a></li>
+          <li><a href="my_listing.html" class="font-bold text-lg md:text-xl">My Listing</a></li>
+          <li><a href="my_purchases.html" class="font-bold text-lg md:text-xl">My Purchases</a></li>
+          <li><a href="dashboard.html" class="font-bold text-lg md:text-xl">Dashboard</a></li>
+        </ul>
       </div>
+    </div>
 
-    <!-- This is main section -->
-    <main class="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24 pt-2 mt-2">
-        
+    <!-- main section -->
+    <main class="col-span-10 bg-gray-200 min-h-screen w-full">
+      <div class="mt-10">
+        <!-- information -->
         <div>
-            <h1 class="text-center text-3xl md:text-5xl font-bold mt-6">Welcome to Your Profile</h1>
+            <h1 class="text-center text-3xl md:text-5xl font-bold mb-12 pt-20  md:pt-24">Products You Have <strong>Added</strong> So Far..
+        </h1>
         </div>
 
-        
-        <div class="mt-10">
-            <!-- information -->
-            <section class="px-2 py-4 mt-16 flex flex-col justify-center items-center text-center">
-                <img class="inline-flex object-cover border-4 border-[#74BBFD] rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-[#74BBFD]/100 bg-indigo-50 text-[#74BBFD] h-24 w-24 !h-48 !w-48" src="./assets/images/avatar.jpg" alt="">
-                <h1 class="text-2xl text-black font-bold mt-4">
-                  Johh Doe
-                </h1>
-                <h2 class="text-base md:text-xl text-black font-bold">
-                  Email: 
-                  <a href="" target=""
-                    class="text-indigo-900 hover:text-indigo-600 font-bold border-b-0 hover:border-b-4 hover:border-b-indigo-300 transition-all mb-2">
-                    XYZ@gmail.com
-                  </a>
-                </h2>
-                <h2 class="text-base md:text-xl text-black font-bold">
-                  Balance: 
-                  <a href="" target=""
-                    class="text-indigo-900 hover:text-indigo-600 font-bold border-b-0 hover:border-b-4 hover:border-b-indigo-300 transition-all mb-2">
-                    33,000$
-                  </a>
-                </h2>
-              </section>
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto  mt-24 gap-x-8 gap-y-8 px-20" id="product-list-cards">
 
-            <div>
-              <div>
-
-                <div class="flex justify-center mt-12">
-                    <a href="deposit.html" class="bg-white text-black hover:text-white hover:bg-[#005F86] py-2 px-6 rounded text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
-                      Deposit Money
+            <!-- card -->
+            <div class="card  bg-[#ADD8FF] shadow-xl">
+                <figure>
+                  <img
+                  src="https://electromart.com.bd/wp-content/uploads/2021/11/XG80-8205AES.png"
+                  alt="product image"
+                  />
+                </figure>
+                <div class="card-body">
+                  <h2 class="card-title text-2xl">
+                    Washer
+                    <div class="badge badge-primary">Electronics</div>
+                  </h2>
+                  <h2 class="text-md font-semibold">Price: 75.00$</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing 
+                  </p>
+                  <div class="card-actions justify-center mt-4">
+                    <a href="product_details.html" class="bg-[#005F86] text-white text-center hover:text-black hover:bg-white py-2 px-6 rounded text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg w-full">
+                      Details
                     </a>
                   </div>
+                </div> 
               </div>
-
-              <div class="flex justify-center gap-x-12">
-                <div class="flex justify-center mt-12">
-                    <a href="edit_account.html" class="bg-white text-black hover:text-white hover:bg-[#005F86] py-2 px-6 rounded text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
-                      Edit Profile
+            <!-- card -->
+            <!-- card -->
+            <div class="card  bg-[#ADD8FF] shadow-xl">
+                <figure>
+                  <img
+                  src="https://electromart.com.bd/wp-content/uploads/2021/11/XG80-8205AES.png"
+                  alt="product image"
+                  />
+                </figure>
+                <div class="card-body">
+                  <h2 class="card-title text-2xl">
+                    Washer
+                    <div class="badge badge-primary">Electronics</div>
+                  </h2>
+                  <h2 class="text-md font-semibold">Price: 75.00$</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing 
+                  </p>
+                  <div class="card-actions justify-center mt-4">
+                    <a href="product_details.html" class="bg-[#005F86] text-white text-center hover:text-black hover:bg-white py-2 px-6 rounded text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg w-full">
+                      Details
                     </a>
                   </div>
-                  <div class="flex justify-center mt-12">
-                    <a href="change_password.html" class="bg-white text-black hover:text-white hover:bg-[#005F86] py-2 px-6 rounded text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
-                      Change Password
-                    </a>
-                  </div>
-            </div>
-            </div>
-        </div>
-
-
-
-
-        <div>
-            <h1 class="text-center text-3xl md:text-5xl font-bold mt-12">Products You Have <strong>Bought</strong> So Far..</h1>
-        </div>
-
-        <div class="">
-
+                </div> 
+              </div>
+            <!-- card -->
             <!-- card -->
             <div class="card  bg-[#ADD8FF] shadow-xl">
                 <figure>
@@ -181,48 +161,14 @@
                   </div>
                 </div> 
               </div>
-            <!-- card -->
-            <div class="card  bg-[#ADD8FF] shadow-xl">
-                <figure>
-                  <img
-                  src="https://electromart.com.bd/wp-content/uploads/2021/11/XG80-8205AES.png"
-                  alt="product image"
-                  />
-                </figure>
-                <div class="card-body">
-                  <h2 class="card-title text-2xl">
-                    Washer
-                    <div class="badge badge-primary">Electronics</div>
-                  </h2>
-                  <h2 class="text-md font-semibold">Price: 75.00$</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing 
-                  </p>
-                  <div class="card-actions justify-center mt-4">
-                    <a href="product_details.html" class="bg-[#005F86] text-white text-center hover:text-black hover:bg-white py-2 px-6 rounded text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg w-full">
-                      Details
-                    </a>
-                  </div>
-                </div> 
-              </div>
+        </section>
 
-
-          </div>
-
-        
-        
-          <div>
-          </div>
-        <h1 class="text-center text-3xl md:text-5xl font-bold mt-12">Products You Have <strong>Added</strong> So Far..</h1>
-
-        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 mx-auto  mt-12 gap-x-8 gap-y-8" id="product-list-cards">
+        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 mx-auto  mt-12 gap-x-8 gap-y-8" id="no-data">
             <div class="flex justify-center">
                 <img class="" src="./assets/images/nodata.png" alt="">
             </div>
         </div>
-           
-    </main>
-
+    </div>
 
     <!-- footer -->
     <footer class="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24 py-5 mt-4">
@@ -244,7 +190,7 @@
               <a href="aboutus.html" class="link link-hover">About Us</a>
               <a href="contact.html" class="link link-hover">Contact</a>
               <a href="pricing.html" class="link link-hover">Pricing</a>
-            </nav>  
+            </nav> 
             <nav>
               <h6 class="footer-title">Legal</h6> 
               <a href="" class="link link-hover">Terms of use</a>
@@ -260,12 +206,15 @@
                 <p class="text-center text-xl font-semibold">Copyright © 2024 - All right reserved by <strong>Listed & Lifted</strong></p>
               </aside>
           </div>
-        </footer>
+    </footer>
+    </main>
+    </div>
+    
+    
 
-        <a href="#" class="to-top">
-          <i class="fas fa-chevron-up"></i>
-        </a>
-        <script src="./js/main.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/daisyui@2.7.0/dist/full.js"></script>
+
+  <script src="./js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/daisyui@2.7.0/dist/full.js"></script>
 </body>
+
 </html>
