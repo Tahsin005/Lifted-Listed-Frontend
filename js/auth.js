@@ -103,5 +103,9 @@ const showPasswordAlert = (message) => {
                         <span>${message}</span>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>`
-    parent.appendChild(div)
+    parent.appendChild(div);
+    alert("Enter valid username or password");
+    setTimeout(function() {
+        window.location.reload();
+    }, 1000);
 }
