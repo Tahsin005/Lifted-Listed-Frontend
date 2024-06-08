@@ -66,12 +66,12 @@ const displayproductByCategory = (data) => {
                                     alt="product image"
                                     />
                                 </figure>
-                                <div class="card-body flex justify-start">
-                                    <h2 class="card-title text-2xl">
+                                <div class="card-body">
+                                    <h2 class="card-title md:text-2xl">
                                     ${product.name}
                                     </h2>
                                     <div>
-                                        <h2 class="badge">${cat}</h2>
+                                        <h2 class="">${cat}</h2>
                                     </div>
                                     <h2 class="text-md font-semibold">Price: <span>${
                                       product.price == 0
@@ -89,7 +89,9 @@ const displayproductByCategory = (data) => {
                                     </a>
                                     </div>
                                 </div> 
-                            </div>`;
+                            </div>
+                            
+                            `;
                   parent.appendChild(div);
                 }
               });
