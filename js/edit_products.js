@@ -162,7 +162,7 @@ function deleteProduct() {
     .then((response) => {
       if (response.ok) {
         alert("Product deleted successfully");
-        window.location.href = "products.html";
+        window.location.href = "my_listing.html";
       } else {
         console.error("Error deleting product:", response.statusText);
       }
