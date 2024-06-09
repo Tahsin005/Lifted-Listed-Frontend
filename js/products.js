@@ -80,6 +80,9 @@ const displayproductByCategory = (data) => {
                                     }</span>$</h2>
                                     <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing 
+                                    Lorem ipsum dolor sit amet consectetur adipisicing 
+                                    Lorem ipsum dolor sit amet consectetur adipisicing 
+                                    Lorem ipsum dolor sit amet consectetur adipisicing 
                                     </p>
                                     <div class="card-actions justify-center mt-4">
                                     <a href="product_details.html?id=${

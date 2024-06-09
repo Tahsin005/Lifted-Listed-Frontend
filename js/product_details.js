@@ -1,7 +1,7 @@
 const getParams = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const param = urlParams.get("id");
-//   console.log(param);
+  //   console.log(param);
   if (!param || param.trim() === "") {
     return;
   }
@@ -19,7 +19,7 @@ const buyProduct = (event) => {
   const listedandlifted_user_account = localStorage.getItem(
     "listedandlifted_user_account"
   );
-//   console.log("user_id", user_id);
+  //   console.log("user_id", user_id);
   const loadBalance = () => {
     return new Promise((resolve, reject) => {
       fetch(
@@ -27,14 +27,14 @@ const buyProduct = (event) => {
       )
         .then((response) => response.json())
         .then((data) => {
-        //   console.log(data);
+          //   console.log(data);
           let balance = data.balance;
-        //   console.log("User balance: " + balance);
+          //   console.log("User balance: " + balance);
           fetch(`https://shortlisted.onrender.com/product/list/${product_id}/`)
             .then((res) => res.json())
             .then((prodata) => {
               let pro_price = prodata.price;
-            //   console.log("Product price: " + pro_price);
+              //   console.log("Product price: " + pro_price);
               if (pro_price > balance) {
                 alert("Not enough money to buy this product.");
                 window.location.href = "deposit.html";
@@ -80,9 +80,9 @@ const addReview = (event) => {
   const body = document.getElementById("description").value;
   const product = getParams();
   const user = localStorage.getItem("listedandlifted_user_id");
-//   console.log(body);
-//   console.log(product);
-//   console.log(user);
+  //   console.log(body);
+  //   console.log(product);
+  //   console.log(user);
   try {
     const formData = new FormData();
     formData.append("body", body);
@@ -126,7 +126,7 @@ const productDetailsHandler = async () => {
     window.location.href = "login.html";
   }
   const id = getParams();
-//   console.log(id);
+  //   console.log(id);
   // staring here ...
   try {
     const response = await fetch(
@@ -252,9 +252,9 @@ const productDetailsHandler = async () => {
                                   }
   
   
-                                  <div class="my-3" id="reviews-box">
+                                  <div class="my-3 rounded-xl" id="reviews-box">
                                       <div class="bg-[#74BBFD] p-4">
-                                        <h3 class="text-lg font-semibold text-white">Reviews: ${
+                                        <h3 class="text-lg font-semibold text-black">Reviews: ${
                                           reviews.length
                                         }</h3>
                                       </div>
