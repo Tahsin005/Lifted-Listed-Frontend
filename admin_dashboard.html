@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="./styles/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="./styles/styles.css">
 
     <!-- icon -->
     <link class="rounded-lg" rel="icon" href="./assets/images/LandL.png">
@@ -20,80 +21,44 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.7.0/dist/full.css" rel="stylesheet">
+
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- This is header section -->
-    <div class="drawer max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24 pt-12 flex">
-      <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-row">
-        <!-- Navbar -->
-        <div class="flex">
-  
-          <div class="w-full navbar">
-            <div class="flex-none">
-              <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                  class="inline-block w-6 h-6 stroke-current">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-              </label>
-            </div>
-            
-          </div>
-        </div>
-        <!-- Page content here -->
-        
-        
-      </div>
-      <a href="index.html" class="flex justify-center">
-        <div class="flex text-end px-2 mx-2 text-2xl font-extrabold justify-end my-auto">Lifted & Listed</div>
-      </a>
-  
-      <div class="drawer-side z-20">
-        <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
-        <ul class="menu p-4 w-48 md:w-80 min-h-full bg-base-200">
+  <div class="lg:grid grid-cols-12">
+    <!-- responsive navbar -->
+    <div class="lg:hidden">
+      <nav>
+        <button class="p-4" id="toggler">
+          <img height="20px" width="20px" src="./assets/images/menu.png" alt="menu button" />
+        </button>
+      </nav>
+    </div>
+    <!-- sidebar -->
+    <div id="sidebar" class="col-span-3  lg:min-h-screen hidden lg:block">
+      <div class="px-6 py-12">
+        <ul class="menu p-4 w-48 md:w-80 md:min-h-full">
           <!-- Sidebar content here -->
-          <li><a href="index.html" class="font-bold text-sm md:text-xl">Home</a></li>
-          <li><a href="aboutus.html" class="font-bold text-sm md:text-xl">About Us</a></li>
-          <li><a href="features.html" class="font-bold text-sm md:text-xl">Features</a></li>
-          <li><a href="products.html" class="font-bold text-sm md:text-xl">Products</a></li>
-          <li><a id="add_product-button" href="add_product.html" class="font-bold text-sm md:text-xl">Add Product</a></li>
-          <li><a href="contact.html" class="font-bold text-sm md:text-xl">Contact</a></li>
-          <li><a id="signup-button" href="signup.html" class="font-bold text-sm md:text-xl">Signup</a></li>
-          <li><a id="dashboard-button" href="dashboard.html" class="font-bold text-sm md:text-xl">Dashboard</a></li>
+          <li><a href="index.html" class="font-bold text-lg md:text-xl">Home</a></li>
+          <li><a href="admin_products.html" class="font-bold text-lg md:text-xl">All Products</a></li>
+          <li><a href="all_user.html" class="font-bold text-lg md:text-xl">All Users</a></li>
           <li><a id="admin-dashboard-button" href="admin_dashboard.html" class="font-bold text-sm md:text-xl">Admin Dashboard</a></li>
-          <li><a id="logout-button" onclick="handleLogout()" class="font-bold text-sm md:text-xl">Logout</a></li>
         </ul>
       </div>
     </div>
 
-    <!-- This is main section -->
-    <main class="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24 pt-2 mt-2">
+    <!-- main section -->
+    <main class="col-span-9 bg-gray-200 min-h-screen w-full">
+      <div class="mt-10" id="user-account">
+        <!-- information -->
         
-        <div>
-            <h1 class="text-center text-3xl md:text-5xl font-bold">About Us</h1>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mt-12">
-            <div class="md:mx-4 lg:mx-12 my-auto">
-                <img class="" src="./assets/images/abt-1.png" alt="">
-            </div>
-            <div class="my-auto justify-start">
-                <h1 class="text-center font-bold text-2xl">Discover What Others Love: Welcome to Lifted & Listed!</h1>
-                <p class="text-center mt-5  text-xl">Tired of sifting through endless product options? <br>Lifted & Listed cuts through the noise by offering a curated marketplace built on real-world recommendations. <br> Here, you won't find generic ads or sponsored content - just products genuinely loved and listed by our users.</p>
-            </div>
-            
-            
-        </div>
-        <h1 class="text-center font-bold text-xl mt-6">Find out the features right now!</h1>
-        <div class="text-center my-6">
-            <a href="features.html" class="bg-white text-black hover:text-white hover:bg-[#005F86] py-2 px-6 rounded text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Features</a>
-        </div>
-    </main>
 
+
+      </div>
 
     <!-- footer -->
     <footer class="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24 py-5 mt-4">
@@ -131,13 +96,18 @@
                 <p class="text-center text-xl font-semibold">Copyright © 2024 - All right reserved by <strong>Listed & Lifted</strong></p>
               </aside>
           </div>
-        </footer>
+    </footer>
+    </main>
+    </div>
+    
+    
 
-        <a href="#" class="to-top">
-          <i class="fas fa-chevron-up"></i>
-        </a>
-        <script src="./js/main.js"></script>
-        <script src="./js/logout.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/daisyui@2.7.0/dist/full.js"></script>
+    <a href="#" class="to-top">
+      <i class="fas fa-chevron-up"></i>
+    </a>
+  <script src="./js/main.js"></script>
+  <script src="./js/admin_dashboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/daisyui@2.7.0/dist/full.js"></script>
 </body>
+
 </html>

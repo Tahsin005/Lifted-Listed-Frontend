@@ -179,7 +179,7 @@ const productDetailsHandler = async () => {
                                                         </div>
                                                         ${
                                                           product.added_by ==
-                                                          uid
+                                                          uid 
                                                             ? `
                                                             <a href="edit_products.html?id=${product.id}" class="w-1/2 px-2">
                                                             <button  class="bg-[#005F86] text-white text-center hover:text-black hover:bg-white py-2 px-6 rounded text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg w-full">Edit Product</button>

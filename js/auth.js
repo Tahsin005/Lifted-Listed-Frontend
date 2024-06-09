@@ -65,20 +65,26 @@ const handleLogin = (event) => {
         })
             .then(res => res.json())
             .then((data) => {
-                // console.log(data);
+                console.log("---", data);
                 if (data.token && data.user_id) {
                     localStorage.setItem("listedandlifted_token", data.token);
                     localStorage.setItem("listedandlifted_user_id", data.user_id);
+                    console.log(data.user_id);
                     const user_id = data.user_id
-                    fetch(`https://shortlisted.onrender.com/user/account/?user_id=${user_id}`)
+                    fetch(`https://shortlisted.onrender.com/user/account/${user_id}`)
                         .then(res => res.json())
-                        .then((data) => {
-                            // console.log("all data " , data);
-                            let x = data.length 
-                            // console.log(x);
-                            // console.log(data[x - 1].id);
-                            if (data && data.length > 0 && data[x - 1].id) {
-                                localStorage.setItem("listedandlifted_user_account", data[x - 1].id);
+                        .then((value) => {
+                            console.log("all data " , value);
+                            console.log(value.id);
+                            if (data && value && value.id) {
+                                localStorage.setItem("listedandlifted_user_account", value.id);
+                                if (value.id == 15) {
+                                    console.log("Ami admin");
+                                    localStorage.setItem("admin", 1);
+                                    
+                                } else {
+                                    localStorage.setItem("admin", 0);
+                                }
                                 const user_account = localStorage.getItem("listedandlifted_user_account");
                                 alert("Logged in successfully");
                                 window.location.href = "index.html";
