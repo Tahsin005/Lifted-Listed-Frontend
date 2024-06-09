@@ -34,8 +34,9 @@ const loadproductByCategory = async (slug = null) => {
 const displayproductByCategory = (data) => {
     console.log("Data : ", data);
     let myArray = [];
+
     data.forEach((product) => {
-        if(product.added_by == getId) {
+        if(product.bought_by == getId) {
             myArray.push(product)
             let cat;
             const loadCategory = () => {
@@ -100,7 +101,7 @@ const displayproductByCategory = (data) => {
         else {
             // alert()
             // document.getElementById('product-list-cards').innerHTML = "";
-            // document.getElementById("cards-nodata").style.display = "none"
+            
         }
     })
 
