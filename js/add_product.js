@@ -5,7 +5,7 @@ if (!token) {
 
 const loadCategories = async () => {
     try {
-        const response = await fetch("https://shortlisted.onrender.com/product/category/")
+        const response = await fetch("https://shortlisted-iol7.onrender.com/product/category/")
         const category = await response.json();
         // console.log(category);
         category.forEach((item) => {
@@ -48,7 +48,7 @@ const addProduct = (event) => {
         for (var key in formData) {
             console.log(key, formData[key]);
         }
-        fetch("https://shortlisted.onrender.com/product/list/", {
+        fetch("https://shortlisted-iol7.onrender.com/product/list/", {
             method: "POST",
             body: formData
         })

@@ -2,7 +2,7 @@
 const loadAlluser = () => {
     const all_user_box = document.getElementById("all-users");
     try {
-        fetch("https://shortlisted.onrender.com/user/allUser/")
+        fetch("https://shortlisted-iol7.onrender.com/user/allUser/")
         .then((res) => res.json())
         .then((user) => {
             console.log(user);

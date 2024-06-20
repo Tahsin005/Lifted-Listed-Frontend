@@ -6,7 +6,7 @@ if (getId) {
 }
 const loadCategories = async () => {
     try {
-        const response = await fetch("https://shortlisted.onrender.com/product/category/")
+        const response = await fetch("https://shortlisted-iol7.onrender.com/product/category/")
         const category = await response.json();
         category.forEach((item) => {
             // console.log(item.slug);
@@ -20,7 +20,7 @@ const loadCategories = async () => {
 
 const loadproductByCategory = async (slug = null) => {
     try {
-        const response = await fetch(`https://shortlisted.onrender.com/product/list/?categories__slug=${slug? slug : ""}`);
+        const response = await fetch(`https://shortlisted-iol7.onrender.com/product/list/?categories__slug=${slug? slug : ""}`);
         const data = await response.json();
         // console.log(data);
         if (data.length > 0) {
@@ -40,7 +40,7 @@ const displayproductByCategory = (data) => {
             let cat;
             const loadCategory = () => {
                 try {
-                    fetch("https://shortlisted.onrender.com/product/category/")
+                    fetch("https://shortlisted-iol7.onrender.com/product/category/")
                         .then(res => res.json())
                         .then(category => {
                             // console.log(category)

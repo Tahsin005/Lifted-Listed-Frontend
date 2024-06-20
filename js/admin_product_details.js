@@ -23,14 +23,14 @@ const getParams = () => {
     const loadBalance = () => {
       return new Promise((resolve, reject) => {
         fetch(
-          `https://shortlisted.onrender.com/user/account/${listedandlifted_user_account}/`
+          `https://shortlisted-iol7.onrender.com/user/account/${listedandlifted_user_account}/`
         )
           .then((response) => response.json())
           .then((data) => {
             //   console.log(data);
             let balance = data.balance;
             //   console.log("User balance: " + balance);
-            fetch(`https://shortlisted.onrender.com/product/list/${product_id}/`)
+            fetch(`https://shortlisted-iol7.onrender.com/product/list/${product_id}/`)
               .then((res) => res.json())
               .then((prodata) => {
                 let pro_price = prodata.price;
@@ -52,7 +52,7 @@ const getParams = () => {
     };
   
     loadBalance().then(() => {
-      fetch(`https://shortlisted.onrender.com/product/buy/`, {
+      fetch(`https://shortlisted-iol7.onrender.com/product/buy/`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ product_id, user_id }),
@@ -89,7 +89,7 @@ const getParams = () => {
       formData.append("product", product);
       formData.append("user", user);
       console.log(formData);
-      fetch(`https://shortlisted.onrender.com/product/review/`, {
+      fetch(`https://shortlisted-iol7.onrender.com/product/review/`, {
         method: "POST",
         body: formData,
       })
@@ -111,7 +111,7 @@ const getParams = () => {
   const reviewerDetails = async (user_id) => {
     try {
       const response = await fetch(
-        `https://shortlisted.onrender.com/user/allUser/${user_id}/`
+        `https://shortlisted-iol7.onrender.com/user/allUser/${user_id}/`
       );
       const userData = await response.json();
       return userData;
@@ -130,7 +130,7 @@ const getParams = () => {
     // staring here ...
     try {
       const response = await fetch(
-        `https://shortlisted.onrender.com/product/list/${id}/`
+        `https://shortlisted-iol7.onrender.com/product/list/${id}/`
       );
       const product = await response.json();
       // console.log(product.bought_by);
@@ -140,12 +140,12 @@ const getParams = () => {
   
       let cat;
       const review = await fetch(
-        `https://shortlisted.onrender.com/product/review/?product__id=${id}`
+        `https://shortlisted-iol7.onrender.com/product/review/?product__id=${id}`
       );
       const reviews = await review.json();
       const loadCategory = async () => {
         try {
-          fetch("https://shortlisted.onrender.com/product/category/")
+          fetch("https://shortlisted-iol7.onrender.com/product/category/")
             .then((res) => res.json())
             .then((category) => {
               category.forEach((item) => {

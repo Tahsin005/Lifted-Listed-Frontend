@@ -1,7 +1,7 @@
 const handleLogout = () => {
     // alert()
     const token = localStorage.getItem("listedandlifted_token");
-    fetch("https://shortlisted.onrender.com/user/logout/", {
+    fetch("https://shortlisted-iol7.onrender.com/user/logout/", {
         method: "GET",
         authorization: `Token ${token}`,
         headers: { "content-type": "application/json" },

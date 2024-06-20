@@ -20,7 +20,7 @@ const handleRegistration = (event) => {
                     formData.append("email", email);
                     formData.append("password", password);
                     formData.append("confirm_password", confirm_password);
-                    fetch("https://shortlisted.onrender.com/user/register/", {
+                    fetch("https://shortlisted-iol7.onrender.com/user/register/", {
                         method: "POST",
                         body: formData,
                     })
@@ -56,7 +56,7 @@ const handleLogin = (event) => {
     const password = getValue("password-login");
     // console.log(username, password);
     if (username && password) {
-        fetch("https://shortlisted.onrender.com/user/login/", {
+        fetch("https://shortlisted-iol7.onrender.com/user/login/", {
             method: "POST",
             headers: { 
                 "content-type": "application/json" 
@@ -71,13 +71,13 @@ const handleLogin = (event) => {
                     localStorage.setItem("listedandlifted_user_id", data.user_id);
                     console.log(data.user_id);
                     const user_id = data.user_id
-                    fetch(`https://shortlisted.onrender.com/user/account/${user_id}`)
+                    fetch(`https://shortlisted-iol7.onrender.com/user/account/?user_id=${user_id}`)
                         .then(res => res.json())
                         .then((value) => {
                             console.log("all data " , value);
-                            console.log(value.id);
-                            if (data && value && value.id) {
-                                localStorage.setItem("listedandlifted_user_account", value.id);
+                            console.log(value[0].id);
+                            if (data && value && value[0].id) {
+                                localStorage.setItem("listedandlifted_user_account", value[0].id);
                                 if (value.id == 15) {
                                     console.log("Ami admin");
                                     localStorage.setItem("admin", 1);
