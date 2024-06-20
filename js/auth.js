@@ -76,8 +76,17 @@ const handleLogin = (event) => {
                         .then((value) => {
                             console.log("all data " , value);
                             console.log(value[0].id);
-                            if (data && value && value[0].id) {
-                                localStorage.setItem("listedandlifted_user_account", value[0].id);
+                            var ID = 0;
+                            value.forEach(element => {
+                                console.log(element.user);
+                                if (element.user == data.user_id) {
+                                    console.log("paisi baal");
+                                    ID = element.id;
+                                    console.log(ID);
+                                }
+                            });
+                            if (data && value && ID) {
+                                localStorage.setItem("listedandlifted_user_account", ID);
                                 if (value.id == 15) {
                                     console.log("Ami admin");
                                     localStorage.setItem("admin", 1);
