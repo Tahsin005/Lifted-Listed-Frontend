@@ -17,6 +17,27 @@ Listed and Lifted is your premier online marketplace where users can both buy an
 **Backend:** Django REST API, PostgreSQL
 
 
+## Installation
+
+### Prerequisites
+    . Web browser (Chrome, Firefox, Safari, etc.)
+    . Code editor (VSCode, Sublime Text, etc.) - optional for development
+### Steps
+
+ Clone this repository:
+
+```bash
+  git clone https://github.com/Tahsin005/Lifted-Listed-Frontend
+  cd Lifted Listed Frontend
+
+```
+    
+Open the project in your preferred code editor or directly in your file explorer.
+
+Open index.html in your web browser to view the site.
+
+For development, you can use a live server extension in your code editor to automatically reload the page on changes.
+
 ## Documentation
 
 [Documentation](https://docs.google.com/document/d/1T4xksYexwfVn3DL_4BhjQ74RO2jSyqf8FNJl_0ZwBBM/edit?usp=sharing)
