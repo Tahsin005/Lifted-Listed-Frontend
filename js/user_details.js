@@ -11,7 +11,7 @@ const loadUserDetails = () => {
     const user_id = getParams();
     // console.log(user_id);
     try {
-        fetch(`https://shortlisted-iol7.onrender.com/allUser/${user_id}/`)
+        fetch(`https://lifted-listed-backend.onrender.com/allUser/${user_id}/`)
         .then((res) => res.json())
         .then((data) => {
             console.log(data);

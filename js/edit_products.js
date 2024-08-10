@@ -16,20 +16,20 @@ const loadInstance = async () => {
   // staring here ...
   try {
     const response = await fetch(
-      `https://shortlisted-iol7.onrender.com/product/list/${id}/`
+      `https://lifted-listed-backend.onrender.com/product/list/${id}/`
     );
     const product = await response.json();
     let cat;
     const loadCategory = async () => {
       try {
-        fetch("https://shortlisted-iol7.onrender.com/product/category/")
+        fetch("https://lifted-listed-backend.onrender.com/product/category/")
           .then((res) => res.json())
           .then((category) => {
             category.forEach((item) => {
               if (product.categories[0] == item.id) {
                 try {
                   fetch(
-                    `https://shortlisted-iol7.onrender.com/product/list/${product.id}/`
+                    `https://lifted-listed-backend.onrender.com/product/list/${product.id}/`
                   )
                     .then((res) => res.json())
                     .then((user) => {
@@ -87,13 +87,13 @@ const handleProductDetails = async () => {
   // staring here ...
   try {
     const response = await fetch(
-      `https://shortlisted-iol7.onrender.com/product/list/${id}/`
+      `https://lifted-listed-backend.onrender.com/product/list/${id}/`
     );
     const product = await response.json();
     let cat;
     const loadCategory = async () => {
       try {
-        fetch("https://shortlisted-iol7.onrender.com/product/category/")
+        fetch("https://lifted-listed-backend.onrender.com/product/category/")
           .then((res) => res.json())
           .then((category) => {
             category.forEach((item) => {
@@ -118,7 +118,7 @@ const handleProductDetails = async () => {
 
                 try {
                   fetch(
-                    `https://shortlisted-iol7.onrender.com/product/list/${product.id}/`,
+                    `https://lifted-listed-backend.onrender.com/product/list/${product.id}/`,
                     {
                       method: "PATCH",
                       headers: { "content-type": "application/json" },
@@ -154,7 +154,7 @@ const handleProductDetails = async () => {
 };
 function deleteProduct() {
   const product_id = getParams();
-  const url = `https://shortlisted-iol7.onrender.com/product/list/${product_id}/`;
+  const url = `https://lifted-listed-backend.onrender.com/product/list/${product_id}/`;
 
   fetch(url, {
     method: "DELETE",

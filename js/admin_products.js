@@ -1,7 +1,7 @@
 const loadCategories = async () => {
     try {
       const response = await fetch(
-        "https://shortlisted-iol7.onrender.com/product/category/"
+        "https://lifted-listed-backend.onrender.com/product/category/"
       );
       const category = await response.json();
       // console.log(category);
@@ -25,7 +25,7 @@ const loadCategories = async () => {
     document.getElementById("cards-nodata").style.display = "none";
     try {
       const response = await fetch(
-        `https://shortlisted-iol7.onrender.com/product/list/?categories__slug=${
+        `https://lifted-listed-backend.onrender.com/product/list/?categories__slug=${
           slug ? slug : ""
         }`
       );
@@ -48,7 +48,7 @@ const loadCategories = async () => {
         let cat;
         const loadCategory = () => {
           try {
-            fetch("https://shortlisted-iol7.onrender.com/product/category/")
+            fetch("https://lifted-listed-backend.onrender.com/product/category/")
               .then((res) => res.json())
               .then((category) => {
                 // console.log(category)

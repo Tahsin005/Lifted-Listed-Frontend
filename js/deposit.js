@@ -13,7 +13,7 @@ const handleDeposit = (event) => {
         console.log("Yes it is a number");
         try {
             var res;
-            fetch('https://shortlisted-iol7.onrender.com/transaction/deposit/', {
+            fetch('https://lifted-listed-backend.onrender.com/transaction/deposit/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

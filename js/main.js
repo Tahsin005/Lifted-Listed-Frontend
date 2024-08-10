@@ -41,7 +41,7 @@ const isAdmin = async () => {
     }
     
     try {
-        const response = await fetch(`https://shortlisted-iol7.onrender.com/user/allUser/${user_id}`);
+        const response = await fetch(`https://lifted-listed-backend.onrender.com/user/allUser/${user_id}`);
         const value = await response.json();
         
         // console.log("Is admin data ---- data", value);

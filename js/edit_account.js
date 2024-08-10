@@ -7,7 +7,7 @@ console.log(user_account);
 if (user_account && user_id) {
     const loadInstance = () => {
         try {
-            fetch(`https://shortlisted-iol7.onrender.com/user/allUser/${user_id}/`)
+            fetch(`https://lifted-listed-backend.onrender.com/user/allUser/${user_id}/`)
                 .then((res) => res.json())
                 .then((user) => {
                     // console.log(user)
@@ -15,7 +15,7 @@ if (user_account && user_id) {
                     document.getElementById('last_name').value = user.last_name
                     document.getElementById('email').value = user.email
                     try {
-                        fetch(`https://shortlisted-iol7.onrender.com/user/account/${user_account}/`)
+                        fetch(`https://lifted-listed-backend.onrender.com/user/account/${user_account}/`)
                             .then((response) => response.json())
                             .then((account) => {
                                 console.log(account);
@@ -44,7 +44,7 @@ const editAccount = async (event) => {
     formData.append('last_name', lastName);
     formData.append('email', email);
     try {
-        const response = await fetch(`https://shortlisted-iol7.onrender.com/user/update/${user_id}/`, {
+        const response = await fetch(`https://lifted-listed-backend.onrender.com/user/update/${user_id}/`, {
             method: 'PATCH',
             body: formData,
         });

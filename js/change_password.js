@@ -22,7 +22,7 @@ const changePassword = (event) => {
   }
 
   try {
-    fetch(`https://shortlisted-iol7.onrender.com/user/password_change/`, {
+    fetch(`https://lifted-listed-backend.onrender.com/user/password_change/`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ user_id, old_password, password, password2 }),

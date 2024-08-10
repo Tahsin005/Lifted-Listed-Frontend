@@ -12,12 +12,12 @@ const loadAccount = () => {
   const user_account = localStorage.getItem('listedandlifted_user_account');
   // console.log(user_account);
   try {
-      fetch(`https://shortlisted-iol7.onrender.com/user/allUser/${user_id}/`)
+      fetch(`https://lifted-listed-backend.onrender.com/user/allUser/${user_id}/`)
       .then((response) => response.json())
       .then((user) => {
           // console.log(user);
           try {
-              fetch(`https://shortlisted-iol7.onrender.com/user/account/${user_account}/`)
+              fetch(`https://lifted-listed-backend.onrender.com/user/account/${user_account}/`)
               .then((response) => response.json())
               .then((account) => {
                   // console.log(account);
