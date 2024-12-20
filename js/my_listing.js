@@ -10,7 +10,7 @@ const loadCategories = async () => {
         const category = await response.json();
         category.forEach((item) => {
             // console.log(item.slug);
-            // loadproductByCategory(item.slug)
+            loadproductByCategory(item.slug)
 
         })
     } catch (err) {
@@ -35,7 +35,7 @@ const displayproductByCategory = (data) => {
     console.log("Data : ", data);
     let myArray = [];
     data.forEach((product) => {
-        if(product.added_by == getId) {
+        if(product.added_by['id'] == getId) {
             myArray.push(product)
             let cat;
             const loadCategory = () => {
@@ -45,7 +45,7 @@ const displayproductByCategory = (data) => {
                         .then(category => {
                             // console.log(category)
                             category.forEach((item) => {
-                                if (product.categories[0] == item.id) {
+                                if (product.categories[0]['id'] == item.id) {
                                     // console.log(item)
                                     cat = item.name
                                     const parent = document.getElementById("product-list-cards")
@@ -72,7 +72,7 @@ const displayproductByCategory = (data) => {
                                         : product.price
                                     }</span>$</h2>
                                     <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing 
+                                    Lorem ipsum dolor sit amet consectetur adipisicing
                                     </p>
                                     <div class="card-actions justify-center mt-4">
                                     <a href="product_details.html?id=${
@@ -81,9 +81,9 @@ const displayproductByCategory = (data) => {
                                         Details
                                     </a>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
-                                   
+
                                     `
                                     parent.appendChild(div)
                                 }

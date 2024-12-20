@@ -1,7 +1,7 @@
 const getId = localStorage.getItem('listedandlifted_user_id');
 if (getId) {
-    // console.log("User id : ");
-    // console.log(getId);
+    console.log("User id : ");
+    console.log(getId);
     // window.location.href = "index.html";
 }
 const loadCategories = async () => {
@@ -10,7 +10,7 @@ const loadCategories = async () => {
         const category = await response.json();
         category.forEach((item) => {
             // console.log(item.slug);
-            // loadproductByCategory(item.slug)
+            loadproductByCategory(item.slug)
 
         })
     } catch (err) {
@@ -19,6 +19,7 @@ const loadCategories = async () => {
 }
 
 const loadproductByCategory = async (slug = null) => {
+    console.log("I am fr fr")
     try {
         const response = await fetch(`https://lifted-listed-backend.onrender.com/product/list/?categories__slug=${slug? slug : ""}`);
         const data = await response.json();
@@ -36,7 +37,8 @@ const displayproductByCategory = (data) => {
     let myArray = [];
 
     data.forEach((product) => {
-        if(product.bought_by == getId) {
+        console.log(product)
+        if(product.bought_by['id'] == getId) {
             myArray.push(product)
             let cat;
             const loadCategory = () => {
@@ -46,7 +48,7 @@ const displayproductByCategory = (data) => {
                         .then(category => {
                             // console.log(category)
                             category.forEach((item) => {
-                                if (product.categories[0] == item.id) {
+                                if (product.categories[0]['id'] == item.id) {
                                     // console.log(item)
                                     cat = item.name
                                     const parent = document.getElementById("product-list-cards")
@@ -73,7 +75,7 @@ const displayproductByCategory = (data) => {
                                         : product.price
                                     }</span>$</h2>
                                     <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing 
+                                    Lorem ipsum dolor sit amet consectetur adipisicing
                                     </p>
                                     <div class="card-actions justify-center mt-4">
                                     <a href="product_details.html?id=${
@@ -82,9 +84,9 @@ const displayproductByCategory = (data) => {
                                         Details
                                     </a>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
-                                   
+
                                     `
                                     parent.appendChild(div)
                                 }
@@ -101,7 +103,7 @@ const displayproductByCategory = (data) => {
         else {
             // alert()
             // document.getElementById('product-list-cards').innerHTML = "";
-            
+
         }
     })
 
