@@ -56,7 +56,7 @@ const buyProduct = (event) => {
 
   loadBalance().then(() => {
     console.log('seller id', seller_id)
-    fetch(`http://lifted-listed-backend.onrender.com/product/buy/`, {
+    fetch(`https://lifted-listed-backend.onrender.com/product/buy/`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ product_id, user_id, seller_id }),
