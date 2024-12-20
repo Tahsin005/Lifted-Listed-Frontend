@@ -16,6 +16,7 @@ const buyProduct = (event) => {
   }
   const product_id = getParams();
   const user_id = localStorage.getItem("listedandlifted_user_id");
+  let seller_id = null;
   const listedandlifted_user_account = localStorage.getItem(
     "listedandlifted_user_account"
   );
@@ -35,6 +36,8 @@ const buyProduct = (event) => {
             .then((prodata) => {
               let pro_price = prodata.price;
               //   console.log("Product price: " + pro_price);
+              seller_id = prodata.added_by.id;
+              console.log("This prouct was added by", seller_id)
               if (pro_price > balance) {
                 alert("Not enough money to buy this product.");
                 window.location.href = "deposit.html";
@@ -52,10 +55,11 @@ const buyProduct = (event) => {
   };
 
   loadBalance().then(() => {
-    fetch(`https://lifted-listed-backend.onrender.com/product/buy/`, {
+    console.log('seller id', seller_id)
+    fetch(`http://lifted-listed-backend.onrender.com/product/buy/`, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ product_id, user_id }),
+      body: JSON.stringify({ product_id, user_id, seller_id }),
     })
       .then((response) => {
         if (response.status == 200) {
@@ -126,14 +130,15 @@ const productDetailsHandler = async () => {
     window.location.href = "login.html";
   }
   const id = getParams();
-  //   console.log(id);
+    console.log(id);
   // staring here ...
   try {
     const response = await fetch(
       `https://lifted-listed-backend.onrender.com/product/list/${id}/`
     );
     const product = await response.json();
-    // console.log(product.bought_by);
+    console.log(product)
+    console.log(product.bought_by);
     // console.log("Product id ---- ", product.id);
     const uid = localStorage.getItem("listedandlifted_user_id");
     // console.log("User er id: ", uid);
@@ -149,7 +154,7 @@ const productDetailsHandler = async () => {
           .then((res) => res.json())
           .then((category) => {
             category.forEach((item) => {
-              if (product.categories[0] == item.id) {
+              if (product.categories[0]['id'] == item.id) {
                 cat = item.name;
                 const parent = document.getElementById("product-details-card");
                 const div = document.createElement("div");
@@ -170,7 +175,7 @@ const productDetailsHandler = async () => {
                                                               null
                                                                 ? `
                                                                 <button class="bg-red-700 text-white text-center  py-2 px-6 rounded text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg w-full">Sold Out</button>
-                                                                
+
                                                                 `
                                                                 : `
                                                                 <button onclick="buyProduct(event)" class="bg-[#005F86] text-white text-center hover:text-black hover:bg-white py-2 px-6 rounded text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg w-full">Buy Now!</button>
@@ -179,7 +184,7 @@ const productDetailsHandler = async () => {
                                                         </div>
                                                         ${
                                                           product.added_by ==
-                                                          uid 
+                                                          uid
                                                             ? `
                                                             <a href="edit_products.html?id=${product.id}" class="w-1/2 px-2">
                                                             <button  class="bg-[#005F86] text-white text-center hover:text-black hover:bg-white py-2 px-6 rounded text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg w-full">Edit Product</button>
@@ -194,7 +199,7 @@ const productDetailsHandler = async () => {
                                                       product.name
                                                     }</h2>
                                                     <div class="badge badge-primary text-xl my-5 p-4">${cat}</div>
-                                                    
+
                                                     <div class="flex mb-4">
                                                         <div class="mr-4">
                                                             <span class="font-bold text-black text-xl">Price:</span>
@@ -205,8 +210,8 @@ const productDetailsHandler = async () => {
                                                             }</span>
                                                         </div>
                                                     </div>
-                                                
-                                                    
+
+
                                                     <div>
                                                         <span class="font-bold text-black text-2xl">Product Description:</span>
                                                         <p class="text-black  text-sm mt-2">
@@ -217,8 +222,8 @@ const productDetailsHandler = async () => {
                                             </div>
                                         </div>
                                     </div>
-  
-  
+
+
                                   ${
                                     product.bought_by != null &&
                                     isAuthenticated() &&
@@ -250,8 +255,8 @@ const productDetailsHandler = async () => {
                                   `
                                       : ``
                                   }
-  
-  
+
+
                                   <div class="my-3 rounded-xl" id="reviews-box">
                                       <div class="bg-[#74BBFD] p-4">
                                         <h3 class="text-lg font-semibold text-black">Reviews: ${
@@ -292,7 +297,7 @@ const productDetailsHandler = async () => {
                                                 </figure>
                                             </div>
                                         </div>
-  
+
                                   `;
                   reviewsParent.appendChild(reviewCard);
                 });

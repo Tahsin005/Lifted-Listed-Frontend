@@ -25,9 +25,7 @@ const loadproductByCategory = async (slug = null) => {
   document.getElementById("cards-nodata").style.display = "none";
   try {
     const response = await fetch(
-      `https://lifted-listed-backend.onrender.com/product/list/?categories__slug=${
-        slug ? slug : ""
-      }`
+      `https://lifted-listed-backend.onrender.com/product/list/`
     );
     const data = await response.json();
     if (data.length > 0) {
@@ -42,7 +40,7 @@ const loadproductByCategory = async (slug = null) => {
 
 const displayproductByCategory = (data) => {
   data.forEach((product) => {
-    // console.log(product);
+    console.log(product);
     if (product.bought_by) {
       console.log("Don't display this product");
     } else {
@@ -52,9 +50,11 @@ const displayproductByCategory = (data) => {
           fetch("https://lifted-listed-backend.onrender.com/product/category/")
             .then((res) => res.json())
             .then((category) => {
-              // console.log(category)
+              console.log(category)
               category.forEach((item) => {
-                if (product.categories[0] == item.id) {
+                console.log(product.categories[0])
+                console.log(item.id)
+                if (product.categories[0]['id'] == item.id) {
                   console.log(item)
                   cat = item.name;
                   const parent = document.getElementById("product-list-cards");
@@ -80,10 +80,10 @@ const displayproductByCategory = (data) => {
                                         : product.price
                                     }</span>$</h2>
                                     <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing 
-                                    Lorem ipsum dolor sit amet consectetur adipisicing 
-                                    Lorem ipsum dolor sit amet consectetur adipisicing 
-                                    Lorem ipsum dolor sit amet consectetur adipisicing 
+                                    Lorem ipsum dolor sit amet consectetur adipisicing
+                                    Lorem ipsum dolor sit amet consectetur adipisicing
+                                    Lorem ipsum dolor sit amet consectetur adipisicing
+                                    Lorem ipsum dolor sit amet consectetur adipisicing
                                     </p>
                                     <div class="card-actions justify-center mt-4">
                                     <a href="product_details.html?id=${
@@ -92,9 +92,9 @@ const displayproductByCategory = (data) => {
                                         Details
                                     </a>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
-                            
+
                             `;
                   parent.appendChild(div);
                 }
